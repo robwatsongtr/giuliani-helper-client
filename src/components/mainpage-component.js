@@ -16,8 +16,8 @@ export default class MainPage extends Component {
     super(props);
 
     this.state = {
-      studyDifficultyLevel: '',
-      studyResultLimit: '',
+      studyDifficultyLevel: '2',
+      studyResultLimit: '2',
       studyNoDifficulty: false,
       studies: []
     }
@@ -51,7 +51,7 @@ export default class MainPage extends Component {
 
   fetchStudiesByDifficulty() {
     
-    fetch('http://localhost:5000/get-randomized-studies-by-difficulty?' + new URLSearchParams({
+    fetch('https://giuliani-helper-server.herokuapp.com/get-randomized-studies-by-difficulty?' + new URLSearchParams({
         difficulty: this.state.studyDifficultyLevel,
         limit: this.state.studyResultLimit
       }), {
@@ -74,7 +74,7 @@ export default class MainPage extends Component {
 
   fetchAllStudies() {
     
-    fetch('http://localhost:5000/get-randomized-studies-all?' + new URLSearchParams({
+    fetch('https://giuliani-helper-server.herokuapp.com/get-randomized-studies-all?' + new URLSearchParams({
         limit: this.state.studyResultLimit
       }), {
         method: "GET",
