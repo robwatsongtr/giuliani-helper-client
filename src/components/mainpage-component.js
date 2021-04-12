@@ -17,7 +17,7 @@ export default class MainPage extends Component {
 
     this.state = {
       studyDifficultyLevel: '2',
-      studyResultLimit: '2',
+      studyResultLimit: '5',
       studyNoDifficulty: false,
       studies: []
     }
@@ -122,7 +122,10 @@ export default class MainPage extends Component {
   render() {
     return (
       <div style={{marginTop: 10}}>
-         
+         <h5>Query Giuliani Studies</h5>
+         <h6>Results are randomized. </h6>
+         <br></br>
+
         <form onSubmit={this.onSubmit}>     
           <div className="form-group">
             <label>Enter Difficulty Level (1-7)</label>

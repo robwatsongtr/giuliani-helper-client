@@ -15,8 +15,8 @@ export default class CreditPage extends Component {
              Rob Watson 
           </a>
          </p>
-         <p>Special thanks to Robert Diamond and Steve Lin
-        </p> 
+         <p>Special thanks to Robert Diamond and Steve Lin</p> 
+         <p>Difficulty levels are approximate and will continue to be refined.</p>
       </div>
     )
   }

@@ -1,4 +1,8 @@
-// Edit studies component
+/* 
+  Edit studies component
+  Will be implemented soon, to assist in refining difficulty levels. 
+*/
+
 
 import React, { Component } from 'react';
 

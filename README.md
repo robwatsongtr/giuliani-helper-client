@@ -7,5 +7,3 @@ This app enables classical and finger style guitarists to choose a specific numb
 Uses the MongoDb / Express / React / Node (MERN) stack.
 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
