@@ -51,7 +51,8 @@ export default class MainPage extends Component {
   }
 
   fetchStudiesByDifficulty() {
-    fetch('https://giuliani-helper-server.herokuapp.com/get-randomized-studies-by-difficulty?' + new URLSearchParams({
+    fetch('https://giuliani-helper-server.herokuapp.com/get-randomized-studies-by-difficulty?' + 
+        new URLSearchParams({
         difficulty: this.state.studyDifficultyLevel,
         limit: this.state.studyResultLimit
       }), {
@@ -73,7 +74,8 @@ export default class MainPage extends Component {
   }
 
   fetchAllStudies() {
-    fetch('https://giuliani-helper-server.herokuapp.com/get-randomized-studies-all?' + new URLSearchParams({
+    fetch('https://giuliani-helper-server.herokuapp.com/get-randomized-studies-all?' + 
+        new URLSearchParams({
         limit: this.state.studyResultLimit
       }), {
         method: "GET",
