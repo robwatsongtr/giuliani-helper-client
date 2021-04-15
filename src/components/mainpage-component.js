@@ -2,6 +2,7 @@
 
 import React, { Component } from 'react';
 
+
 const Study = props => {
   return (
     <tr key={props.study.studyID}>
@@ -50,7 +51,6 @@ export default class MainPage extends Component {
   }
 
   fetchStudiesByDifficulty() {
-    
     fetch('https://giuliani-helper-server.herokuapp.com/get-randomized-studies-by-difficulty?' + new URLSearchParams({
         difficulty: this.state.studyDifficultyLevel,
         limit: this.state.studyResultLimit
@@ -73,7 +73,6 @@ export default class MainPage extends Component {
   }
 
   fetchAllStudies() {
-    
     fetch('https://giuliani-helper-server.herokuapp.com/get-randomized-studies-all?' + new URLSearchParams({
         limit: this.state.studyResultLimit
       }), {
@@ -97,10 +96,15 @@ export default class MainPage extends Component {
   onSubmit(e) {
     e.preventDefault();
 
+    if(this.state.studyResultLimit === '') return; 
+
     if( this.state.studyNoDifficulty === 'on' ) {
       this.fetchAllStudies()
     } else {
-      this.fetchStudiesByDifficulty()
+      if (this.state.studyDifficultyLevel === '') {
+        return;
+      }
+      this.fetchStudiesByDifficulty();
     }
     
     // reset state for 'no difficulty level' checkbox
@@ -120,6 +124,18 @@ export default class MainPage extends Component {
   }
 
   render() {
+    let difficultyLevel = parseInt(this.state.studyDifficultyLevel);
+    let difficultyLevelInvalid = this.state.studyDifficultyLevel === "" 
+      || difficultyLevel < 1 || difficultyLevel > 7;
+    let difficultyLevelClass = "";
+    if (difficultyLevelInvalid) { difficultyLevelClass = "is-invalid" }
+
+    let numStudies = parseInt(this.state.studyResultLimit);
+    let numStudiesInvalid = this.state.studyResultLimit === "" 
+      || numStudies < 1 || numStudies > 10;
+    let numStudiesClass = "";
+    if (numStudiesInvalid) { numStudiesClass = "is-invalid" }
+
     return (
       <div style={{marginTop: 10}}>
          <h5>Query Giuliani Studies</h5>
@@ -130,9 +146,7 @@ export default class MainPage extends Component {
           <div className="form-group">
             <label>Enter Difficulty Level (1-7)</label>
               <input type="number"
-                className="form-control"
-                min="1"
-                max="7"
+                className={ "form-control" + difficultyLevelClass }
                 value={this.state.studyDifficultyLevel}
                 onChange={this.onChangeStudyDifficultyLevel}
               />
@@ -151,9 +165,7 @@ export default class MainPage extends Component {
           <div className="form-group">
             <label>Limit results (1-10)</label>
             <input type="number"       
-              className="form-control"  
-              min="1"
-              max="10"
+              className={"form-control" + numStudiesClass} 
               value={this.state.studyResultLimit}
               onChange={this.onChangeStudyResultLimit}
             />

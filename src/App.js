@@ -6,6 +6,7 @@ import EditStudies from "./components/edit-studies-component";
 import MainPage from "./components/mainpage-component";
 import CreditPage from "./components/credit-page-component";
 
+
 class App extends Component {
   render() {
     return (
