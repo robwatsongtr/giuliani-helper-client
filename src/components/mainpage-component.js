@@ -17,8 +17,8 @@ export default class MainPage extends Component {
     super(props);
 
     this.state = {
-      studyDifficultyLevel: '3',
-      studyResultLimit: '4',
+      studyDifficultyLevel: '2',
+      studyResultLimit: '2',
       studyNoDifficulty: false,
       studies: []
     }
