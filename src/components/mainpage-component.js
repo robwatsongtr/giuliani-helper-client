@@ -2,7 +2,6 @@
 
 import React, { Component } from 'react';
 
-
 const Study = props => {
   return (
     <tr key={props.study.studyID}>
@@ -149,8 +148,6 @@ export default class MainPage extends Component {
             <label>Enter Difficulty Level (1-7)</label>
               <input type="number"
                 className={ "form-control " + difficultyLevelClass }
-                min="1"
-                max="7"
                 value={this.state.studyDifficultyLevel}
                 onChange={this.onChangeStudyDifficultyLevel}
               />
@@ -170,8 +167,6 @@ export default class MainPage extends Component {
             <label>Limit results (1-10)</label>
             <input type="number"       
               className={"form-control " + numStudiesClass} 
-              min="1"
-              max="10"
               value={this.state.studyResultLimit}
               onChange={this.onChangeStudyResultLimit}
             />

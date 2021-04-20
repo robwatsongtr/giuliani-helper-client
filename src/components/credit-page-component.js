@@ -16,7 +16,7 @@ export default class CreditPage extends Component {
           </a>
          </p>
          <p>Special thanks to Robert Diamond and Steve Lin</p> 
-         <p>Difficulty levels are approximate and will continue to be refined.</p>
+         <p>v1.0 April 2021</p><p> Difficulty levels are approximate and will continue to be refined.</p>
       </div>
     )
   }
