@@ -139,7 +139,7 @@ export default class MainPage extends Component {
 
     return (
       <div style={{marginTop: 10}}>
-         <h5>Query Giuliani Studies</h5>
+         <h5>Query 120 Giuliani Studies</h5>
          <h6>Results are randomized. </h6>
          <br></br>
 
